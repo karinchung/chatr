@@ -1,5 +1,20 @@
 # README
 
+## Chatr
+
+Chatr is a messanging app that allows you to communicate with friends online through an easy to user interface. Just log in and start chatting!
+
+## User Stories
+* I'd like to message my friends through an online application
+
+## Technologies
+
+Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
+
+## Remaining Bugs
+* User can submit an empty message
+* Doesn't check for duplicate emails
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -1,14 +1,16 @@
 <h1>All Messages</h1>
 
-<!-- Display each message -->
-<% @message.each do |m| %>
-  <article>
-    <%= m.user.name %>: <%= m.body %>
-  </article>
-<% end %>
+<div class="col-sm-10 pull-right">
+  <!-- Display each message -->
+  <% @message.each do |m| %>
+    <article>
+      <%= m.user.name %>: <%= m.body %>
+    </article>
+  <% end %>
 
-<!-- Form to submit a message-->
-<%= form_for @new_message do |nm| %>
-  <%= nm.text_area :body, placeholder: "Write a new message" %>
-  <%= nm.submit %>
-<% end %>
+  <!-- Form to submit a message-->
+  <%= form_for @new_message do |nm| %>
+    <%= nm.text_area :body, placeholder: "Write a new message"%>
+    <%= nm.submit %>
+  <% end %>
+</div>

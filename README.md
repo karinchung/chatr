@@ -14,6 +14,7 @@ Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
 ## Remaining Bugs
 * User can submit an empty message
 * Doesn't check for duplicate emails
+* Message box size and max size of all messages
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

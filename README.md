@@ -6,6 +6,7 @@ Chatr is a messanging app that allows you to communicate with friends online thr
 
 ## User Stories
 * I'd like to message my friends through an online application
+* The must be a secure login (encrypted password)
 
 ## Technologies
 
@@ -21,7 +22,9 @@ application up and running.
 
 ## Other
 * local image
-* git hub
+* model for groups
+* table for groups
+
 
 Things you may want to cover:
 

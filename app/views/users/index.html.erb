@@ -1,4 +1,15 @@
 <h1>All Users</h1>
+
 <p>Online</p>
 
 <p>Offline</p>
+
+<p>All Users</p>
+
+<ul>
+  <% @user.each do |u| %>
+  <article>
+    <%= link_to u.name, user_path(u) %>
+  </article>
+  <% end %>
+</ul>

@@ -19,6 +19,10 @@ Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
+## Other
+* local image
+* git hub
+
 Things you may want to cover:
 
 * Ruby version

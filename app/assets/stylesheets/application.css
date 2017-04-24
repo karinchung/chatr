@@ -28,7 +28,7 @@ body {
 
 .signInBackground {
   background-image: url("https://www.walldevil.com/wallpapers/a80/keyboard-laptop-desk-mac-macintosh.jpg");
-  /**/
+  /* local image? */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

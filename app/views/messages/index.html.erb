@@ -8,3 +8,7 @@
 <% end %>
 
 <!-- Form to submit a message-->
+<%= form_for @new_message do |nm| %>
+  <%= nm.text_area :body, placeholder: "Write a new message" %>
+  <%= nm.submit %>
+<% end %>

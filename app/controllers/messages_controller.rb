@@ -3,12 +3,18 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.all
-    @new_essage = Message.new
+    @new_message = Message.new
   end
 
   def create
-    @message = Message.new(post_params)
+    @message = Message.new(message_params)
     @message.user = current_user
+    if @message.save
+      redirect_to messages_path
+    else
+      redirect_to messages_path
+      # error or do something else?
+    end
   end
 
   def new

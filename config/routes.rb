@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'messages#index'
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :users
   resources :sessions, only: [:new, :create]

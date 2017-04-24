@@ -1,1 +1,10 @@
 <h1>All Messages</h1>
+
+<!-- Display each message -->
+<% @message.each do |m| %>
+  <article>
+    <%= m.user.name %>: <%= m.body %>
+  </article>
+<% end %>
+
+<!-- Form to submit a message-->

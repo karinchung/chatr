@@ -3,13 +3,15 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.all
+    @new_essage = Message.new
   end
 
   def create
+    @message = Message.new(post_params)
+    @message.user = current_user
   end
 
   def new
-    # @message = Message.new
   end
 
   def edit
@@ -22,5 +24,10 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def message_params
+    params.require(:message).permit(:body)
   end
 end

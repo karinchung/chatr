@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'messages#index'
+  root 'groups#index'
   delete '/logout' => 'sessions#destroy', as: :logout
   resources :users
   resources :sessions, only: [:new, :create]
   resources :messages
+  resources :groups
 end
 
 # Prefix Verb   URI Pattern               Controller#Action
@@ -28,3 +29,12 @@ end
 #          PATCH  /messages/:id(.:format)      messages#update
 #          PUT    /messages/:id(.:format)      messages#update
 #          DELETE /messages/:id(.:format)      messages#destroy
+
+# groups GET    /groups(.:format)            groups#index
+#        POST   /groups(.:format)            groups#create
+# new_group GET    /groups/new(.:format)        groups#new
+# edit_group GET    /groups/:id/edit(.:format)   groups#edit
+#  group GET    /groups/:id(.:format)        groups#show
+#        PATCH  /groups/:id(.:format)        groups#update
+#        PUT    /groups/:id(.:format)        groups#update
+#        DELETE /groups/:id(.:format)        groups#destroy

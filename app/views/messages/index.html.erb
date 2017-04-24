@@ -17,7 +17,10 @@
     <!-- Display each message -->
     <% @message.each do |m| %>
       <article>
-        <%= m.user.name %>: <%= m.body %>
+        <%= m.user.name %>:
+          <article class="messageBox">
+            <%= m.body %>
+        </article>
       </article>
     <% end %>
 

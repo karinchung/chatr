@@ -19,16 +19,6 @@ body {
   height: 100%;
 }
 
-article {
-  padding: 1%;
-  margin-left: 1%;
-}
-
-.messageBox {
-  background-color: tomato;
-  border-radius: 10px;
-  display: inline-block;
-}
 
 .centerNav {
   text-align: center;
@@ -49,8 +39,20 @@ article {
 
 /*index.html All Messages page*/
 
-.allMessages {
-  text-align: center;
+article {
+  padding: 1%;
+  margin-left: 1%;
+}
+
+.messageUser {
+  display: inline-block;
+}
+
+.messageBox {
+  background-color: tomato;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 90%;
 }
 
 .message {
@@ -59,4 +61,11 @@ article {
   padding-right: 5%;
   height: 100%;
   overflow-y: scroll;
+}
+
+.newMessageForm {
+  display: inline-block;
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 85%;
 }

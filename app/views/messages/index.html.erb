@@ -17,7 +17,9 @@
     <!-- Display each message -->
     <% @message.each do |m| %>
       <article>
-        <%= m.user.name %>:
+        <article class="messageUser">
+            <%= link_to m.user.name, user_path(m.user) %>:
+        </article>
           <article class="messageBox">
             <%= m.body %>
         </article>
@@ -25,8 +27,11 @@
     <% end %>
 
     <!-- Form to submit a message-->
-    <%= form_for @new_message do |nm| %>
-      <%= nm.text_area :body, placeholder: "Write a new message"%>
-      <%= nm.submit %>
-    <% end %>
+      <%= form_for @new_message do |nm| %>
+      <div class="newMessageForm">
+        <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%;height: 100px;"%>
+      </div>
+        <%= nm.submit %>
+      <% end %>
+
   </div>

@@ -21,15 +21,26 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    @message = Message.find(params[:id])
   end
 
   def show
   end
 
   def update
+    @message = Message.find(params[:id])
+    if @message.update_attributes(message_params)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
+    @message = Message.find(params[:id])
+    if @message.destroy
+      redirect_to root_path
+    end
   end
 
   private

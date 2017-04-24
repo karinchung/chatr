@@ -16,6 +16,12 @@
       <%= link_to "Login", new_session_path %>
     <% end %>
 
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

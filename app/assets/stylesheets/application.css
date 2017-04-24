@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin-top: 60px;
+}
+
+.centerNav {
+  text-align: center;
+}
+
+.rightNav {
+  text-align: right;
+}
+
+.signInBackground {
+  background-image: url("https://www.walldevil.com/wallpapers/a80/keyboard-laptop-desk-mac-macintosh.jpg");
+  /**/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

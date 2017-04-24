@@ -10,11 +10,28 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= link_to "Logout", logout_path, {method: "DELETE"} %>
-    <% else %>
-      <%= link_to "Login", new_session_path %>
-    <% end %>
+
+<!-- nav bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="container">
+           <ul class="nav navbar-nav">
+             <li>
+               <%= link_to "Chatr", root_path %>
+             </li>
+             <li>
+                <% if logged_in? %>
+                   <%= link_to "Logout", logout_path, {method: "DELETE"} %>
+                 <% else %>
+                   <%= link_to "Login", new_session_path %>
+                 <% end %>
+            </li>
+            <!-- <li>
+              <%= link_to "My Profile"%>
+            </li> -->
+           </ul>
+       </div>
+    </div>
+
 
     <% if flash[:alert] %>
       <div class="alert alert-danger">

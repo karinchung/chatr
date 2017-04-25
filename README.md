@@ -66,3 +66,9 @@ Group.second.messages
 
 Message.first
 
+	  <%# CANCEL BUTTON link_to('Back to All Groups', groups_path, style: "margin: 1%;")%>
+
+	# @group.users.include? current_user
+	#authorize method in application Controller
+	# is_member?
+	# def 

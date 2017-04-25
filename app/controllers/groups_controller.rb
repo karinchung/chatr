@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authorize
-  before_action :is_member?, only: [:show]
+  # before_action :is_member?, only: [:show]
 
   def index
     @group = Group.all
@@ -52,6 +52,5 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:title, :id, :_destroy)
-    # params.require(:message).permit(:id)
   end
 end

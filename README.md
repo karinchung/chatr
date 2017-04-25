@@ -18,6 +18,7 @@ Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
 * User can submit an empty message
 * Doesn't check for duplicate emails
 * Message box size and max size of all messages
+	*	getting an error message when there is no messenger box on the page 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

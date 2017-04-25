@@ -1,2 +1,14 @@
 <h1>Messages#edit</h1>
 <p>Find me in app/views/messages/edit.html.erb</p>
+
+<%= form_for [@group, @message] do |e| %>
+<div class="newMessageForm">
+  <%= e.text_area :body, placeholder: "edit message", style: "width: 100%;height: 100px;"%>
+</div>
+<div class="submit">
+    <br>
+    <%= e.submit %>
+  <% end %>
+    <br>
+  <%# CANCEL BUTTON link_to('Back to All Groups', groups_path, style: "margin: 1%;")%>
+</div>

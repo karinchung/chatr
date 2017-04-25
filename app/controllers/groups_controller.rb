@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authorize
+  before_action :is_member?, only: [:show]
 
   def index
     @group = Group.all

@@ -18,6 +18,7 @@ class MessagesController < ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+    @group = @message.group
   end
 
   def show
@@ -35,8 +36,8 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @group = Group.find(params[:group_id])
-    @delete_group = @group.messages.find @message
-    if @delete_group.destroy
+    # @delete_group = @group.messages.find @message
+    if @message.destroy
       redirect_to group_path(@group)
     end
   end

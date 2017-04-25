@@ -2,19 +2,17 @@ class MessagesController < ApplicationController
   before_action :authorize
 
   def index
-    @message = Message.all
-    @new_message = Message.new
+    # @message = Message.all
+    # @new_message = Message.new
   end
 
   def create
     @message = Message.new(message_params)
     @message.user = current_user
-    if @message.save
-      redirect_to messages_path
-    else
-      redirect_to messages_path
-      # error or do something else?
-    end
+    @group = Group.find(params[:group_id])
+
+    @group.messages << @message
+    redirect_to group_path(@group)
   end
 
   def new
@@ -25,6 +23,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    # redirect_to group_path
   end
 
   def update
@@ -45,6 +44,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:id, :body)
   end
 end

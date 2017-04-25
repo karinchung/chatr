@@ -44,6 +44,10 @@ article {
   margin-left: 1%;
 }
 
+.eachMessage {
+  margin: 1%;
+}
+
 .messageUser {
   display: inline-block;
 }
@@ -67,5 +71,6 @@ article {
   display: inline-block;
   padding-left: 10%;
   padding-right: 10%;
-  width: 85%;
+  margin-top: 1%;
+  width: 80%;
 }

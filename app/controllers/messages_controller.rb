@@ -2,8 +2,6 @@ class MessagesController < ApplicationController
   before_action :authorize
 
   def index
-    # @message = Message.all
-    # @new_message = Message.new
   end
 
   def create
@@ -23,7 +21,6 @@ class MessagesController < ApplicationController
   end
 
   def show
-    # redirect_to group_path
   end
 
   def update
@@ -37,8 +34,10 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
-    if @message.destroy
-      redirect_to root_path
+    @group = Group.find(params[:group_id])
+    @delete_group = @group.messages.find @message
+    if @delete_group.destroy
+      redirect_to group_path(@group)
     end
   end
 

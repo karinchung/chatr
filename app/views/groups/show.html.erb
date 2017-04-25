@@ -26,6 +26,7 @@
         <article class="messageBox">
           <%= m.body %>
         </article>
+        <%= link_to 'Delete', group_path, method: 'DELETE'%>
       </div>
     <% end %>
 
@@ -36,5 +37,5 @@
       </div>
         <%= nm.submit %>
       <% end %>
-
+      <%= link_to('Back to All Groups', groups_path)%>
   </div>

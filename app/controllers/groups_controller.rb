@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authorize
+
   def index
     @group = Group.all
     @new_group = Group.new
@@ -38,9 +40,16 @@ class GroupsController < ApplicationController
   def destroy
   end
 
+  def delete_message
+    @message = Message.find(params[:id])
+    @group = Group.find(params[:id])
+    if @message.destroy
+      redirect_to group_path(@group)
+    end
+  end
+
   private
   def group_params
-    params.require(:message).permit(:body)
-    # params.require(:group).permit(:title, :id)
+    params.require(:group).permit(:title, :id)
   end
 end

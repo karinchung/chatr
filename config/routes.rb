@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'groups#index'
   delete '/logout' => 'sessions#destroy', as: :logout
+  delete '/groups/:id' => 'groups#delete_message'
+  
   resources :users
   resources :sessions, only: [:new, :create]
   resources :groups do
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   # post '/messages' => 'groups#new_message'
   # get '/groups/:id/edit' => 'groups#edit', as: :edit_blurb
   # patch '/groups/:id' => 'groups#update'
-  delete '/groups/:id' => 'groups#delete_message'
 end
 
 # Prefix Verb   URI Pattern                                   Controller#Action

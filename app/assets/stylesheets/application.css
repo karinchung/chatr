@@ -14,11 +14,14 @@
  *= require_self
  */
 
-body {
-  margin-top: 60px;
-  height: 100%;
+html, body {
+  height: 95%;
+  overflow: hidden;
 }
 
+body {
+  margin-top: 60px;
+}
 
 .centerNav {
   text-align: center;
@@ -37,11 +40,15 @@ body {
 }
 
 
-/*index.html All Messages page*/
+/*index.html Group page*/
 
 article {
   padding: 1%;
   margin-left: 1%;
+}
+
+.groupName {
+  text-align: center;
 }
 
 .eachMessage {
@@ -56,15 +63,15 @@ article {
   background-color: tomato;
   border-radius: 10px;
   display: inline-block;
-  max-width: 90%;
+  max-height: 100%;
 }
 
 .message {
   border-left: 1px solid black;
   padding-left: 5%;
   padding-right: 5%;
-  height: 100%;
   overflow-y: scroll;
+  height: 100%;
 }
 
 .newMessageForm {
@@ -73,4 +80,10 @@ article {
   padding-right: 10%;
   margin-top: 1%;
   width: 80%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.page {
+  height: 85%;
 }

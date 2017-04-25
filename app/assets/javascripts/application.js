@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.message').animate({
+  scrollTop: $('.message').get(0).scrollHeight}, 1500);
+});

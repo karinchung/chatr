@@ -41,8 +41,8 @@ class GroupsController < ApplicationController
   end
 
   def delete_message
-    @message = Message.find(params[:id])
     @group = Group.find(params[:id])
+    @messages = @group.messages(params[:id])
     if @message.destroy
       redirect_to group_path(@group)
     end
@@ -50,6 +50,7 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:title, :id)
+    params.require(:group).permit(:title, :id, :_destroy)
+    # params.require(:message).permit(:id)
   end
 end

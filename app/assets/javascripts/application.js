@@ -16,8 +16,9 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).ready(function(){
   // getting an error when there is no messages box
   $('.message').animate({
-  scrollTop: $('.message').get(0).scrollHeight}, 1500);
+  scrollTop: $('.message').get(0) ? $('.message').get(0).scrollHeight : 0}, 1500);
 });

@@ -1,22 +1,28 @@
 <h1>All Groups!</h1>
 
-<div class="createNewGroup">
-  <p>Create a new group</p>
-  <%= form_for @new_group do |ng| %>
-    <div class="newGroupForm">
-      <%= ng.text_field :title, placeholder: "Group Name" %>
-    </div>
-    <%= ng.submit %>
-  <% end %>
-</div>
+<div class="hundred message container">
 
-<div class="displayAllGroups">
-<p>Click on a group to join</p>
-  <% @group.each do |g| %>
-      <% if g.title %>
-      <article class="eachGroup">
-          <%= link_to g.title, group_path(g) %>
-      </article>
-      <% end %>
-  <% end %>
+
+  <div class="createNewGroup">
+    <p>Create a new group</p>
+    <%= form_for @new_group do |ng| %>
+      <div class="newGroupForm">
+        <%= ng.text_field :title, placeholder: "Group Name" %>
+      </div>
+      <%= ng.submit %>
+    <% end %>
+  </div>
+
+  <div class="displayAllGroups">
+  <p>Click on a group to join</p>
+    <% @group.each do |g| %>
+        <% if g.title %>
+        <article class="eachGroup">
+            <%= link_to g.title, group_path(g) %>
+        </article>
+        <% end %>
+    <% end %>
+  </div>
+
+
 </div>

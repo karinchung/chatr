@@ -17,10 +17,10 @@
  @import "bootstrap";
 
 
-html, body {
-  height: 95%;
-  overflow: hidden;
-}
+ html, body {
+   height: 95%;
+   overflow: hidden;
+ }
 
 body {
   margin-top: 60px;
@@ -28,6 +28,11 @@ body {
 
 .hundred {
   height: 100%;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .centerNav {
@@ -62,7 +67,7 @@ article {
 }
 
 .groupName {
-  text-align: center;
+  // text-align: left;
   margin-top: 0;
 }
 
@@ -109,4 +114,15 @@ article {
   display: inline;
   padding-left: 5%;
   margin-top: 1%;
+}
+
+.allGroupsDisplay {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.individualGroup {
+  // background: #fbf9fa none repeat scroll 0 0; toggle background if that is current group id
+  padding: 10px;
+  border-bottom: 1px solid grey;
 }

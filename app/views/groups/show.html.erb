@@ -2,24 +2,30 @@
 
   <div class="hundred row">
 
-
     <div class="page">
 
 
-    <div class="onlineFriends col-sm-2">
-      <div>
-        <span> Search Friends </span>
-        <hr>
-        <span> pretend online friend</span>
-        <hr>
-        <span>Pretend online Friend</span>
-        <hr>
-      </div>
+    <div class="allGroupsDisplay col-sm-3">
+        <ul class="allGroupsDisplay">
+          <div class="individualGroup">
+            All Conversations
+          </div>
+            <!-- If you belong to a group, display the name below -->
+            <ul>
+              <% @memberships.each do |mb|%>
+                <% if mb.user_id == current_user.id %>
+                  <div class="individualGroup">
+                    <%= link_to mb.group_id, group_path(mb.group_id) %>
+                  </div>
+                <% end %>
+              <% end %>
+            </ul>
+
     </div>
 
 
-        <div class="message col-sm-10">
-          <h1 class="groupName">Welcome to: <%= @group.title %> </h1>
+        <div class="message col-sm-9">
+          <h1 class="groupName"><%= @group.title %> </h1>
           <hr>
           <!-- Display each message -->
           <% @messages.each do |m| %>

@@ -15,10 +15,15 @@ Create a new group or join an existing group and start talking to your peers. Yo
 Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
 
 ## Remaining Bugs
-* User can submit an empty message
+
 * Doesn't check for duplicate emails
+	* active record validation
 * Message box size and max size of all messages
 	*	getting an error message when there is no messenger box on the page 
+
+	reroute existing email
+	disable turbolinks- longrun only load certain dates and others upon scroll
+	show date of message 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -72,3 +77,9 @@ Message.first
 	#authorize method in application Controller
 	# is_member?
 	# def 
+
+
+
+            <% @memberships.each do |mb|%>
+              <% if mb.user_ids.include? current %>
+            <% end %>

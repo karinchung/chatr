@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authorize
-  # before_action :is_member?, only: [:show]
+  # before_action :allowMembers, only: [:show]
 
   def index
     @group = Group.all
@@ -27,12 +27,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @messages = @group.messages
     @new_message = Message.new
-  end
-
-  def new_message
-    @group = Group.find(params[:id])
-    @group.messages.create({body: params[:message][:body], user: current_user, group: @group})
-    redirect_to group_path(@group)
   end
 
   def update

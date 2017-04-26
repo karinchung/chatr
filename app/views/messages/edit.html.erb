@@ -1,9 +1,8 @@
-<h1>Messages#edit</h1>
-<p>Find me in app/views/messages/edit.html.erb</p>
+<h1>Edit Your Message</h1>
 
 <%= form_for [@group, @message] do |e| %>
 <div class="newMessageForm">
-  <%= e.text_area :body, placeholder: "edit message", style: "width: 100%;height: 100px;"%>
+  <%= e.text_area :body, placeholder: "edit message", style: "width: 100%;height: 100%"%>
 </div>
 <div class="submit">
     <br>

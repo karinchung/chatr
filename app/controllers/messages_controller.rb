@@ -26,10 +26,11 @@ class MessagesController < ApplicationController
 
   def update
     @message = Message.find(params[:id])
+    @group = Group.find(params[:group_id])
     if @message.update_attributes(message_params)
-      redirect_to root_path
+      redirect_to group_path(@group)
     else
-      redirect_to root_path
+      redirect_to group_path(@group)
     end
   end
 

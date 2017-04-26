@@ -1,55 +1,63 @@
-<h1 class="groupName">Welcome to: <%= @group.title %> </h1>
-<hr>
+<div class="hundred container">
+
+  <div class="hundred row">
 
 
-<div class="page">
+    <div class="page">
 
 
-<div class="onlineFriends col-sm-2 pull-left">
-  <div>
-    <span> Search Friends </span>
-    <hr>
-    <span> pretend online friend</span>
-    <hr>
-    <span>Pretend online Friend</span>
-    <hr>
-  </div>
-</div>
+    <div class="onlineFriends col-sm-2">
+      <div>
+        <span> Search Friends </span>
+        <hr>
+        <span> pretend online friend</span>
+        <hr>
+        <span>Pretend online Friend</span>
+        <hr>
+      </div>
+    </div>
 
 
-
-    <div class="message col-sm-10 pull-right">
-      <!-- Display each message -->
-      <% @messages.each do |m| %>
-        <div class="eachMessage">
-          <article class="messageUser">
-            <%= link_to m.user.name, user_path(m.user) %>:
-          </article>
-          <article class="messageBox">
-            <%= m.body %>
-          </article>
-           <%# if  m.user_id == current_user.id %>
-           <% if  m.user == current_user %>
-             <%= link_to'edit', edit_group_message_path(@group, m) %>
-             <!-- edit group message path -->
-             <%= link_to 'delete', group_message_path(@group, m), method: 'DELETE'%>
-           <% end %>
-        </div>
-      <% end %>
-
-      <!-- Form to submit a message-->
-        <%= form_for [@group, @new_message] do |nm| %>
-        <div class="newMessageForm">
-          <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%;height: 100px;"%>
-        </div>
-        <div class="submit">
-            <br>
-            <%= nm.submit %>
+        <div class="message col-sm-10">
+          <h1 class="groupName">Welcome to: <%= @group.title %> </h1>
+          <hr>
+          <!-- Display each message -->
+          <% @messages.each do |m| %>
+            <div class="eachMessage">
+              <article class="messageUser">
+                <%= link_to m.user.name, user_path(m.user) %>:
+              </article>
+              <article class="messageBox">
+                <%= m.body %>
+              </article>
+               <%# if  m.user_id == current_user.id %>
+               <% if  m.user == current_user %>
+                 <%= link_to'edit', edit_group_message_path(@group, m) %>
+                 <!-- edit group message path -->
+                 <%= link_to 'delete', group_message_path(@group, m), method: 'DELETE'%>
+               <% end %>
+            </div>
           <% end %>
-            <br>
-          <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%>
+
+          <!-- Form to submit a message-->
+            <%= form_for [@group, @new_message] do |nm| %>
+            <div class="newMessageForm">
+              <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%; height: 100%;"%>
+            </div>
+            <div class="submit">
+                <br>
+                <%= nm.submit %>
+              <% end %>
+                <br>
+              <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%>
+            </div>
+
         </div>
 
     </div>
+
+
+
+  </div>
 
 </div>

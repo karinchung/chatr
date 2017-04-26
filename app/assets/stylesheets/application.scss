@@ -10,9 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
 
 html, body {
   height: 95%;
@@ -21,6 +24,10 @@ html, body {
 
 body {
   margin-top: 60px;
+}
+
+.hundred {
+  height: 100%;
 }
 
 .centerNav {
@@ -69,6 +76,7 @@ article {
 
 .messageBox {
   background-color: tomato;
+  box-shadow: 0px 0px 6px #B2B2B2;
   border-radius: 10px;
   display: inline-block;
   max-height: 100%;
@@ -76,6 +84,7 @@ article {
 }
 
 .message {
+  // background-color: rgba(128, 128, 127, .2);
   border-left: 1px solid black;
   padding-left: 5%;
   padding-right: 5%;
@@ -89,8 +98,7 @@ article {
   /*padding-right: 10%;*/
   margin-top: 1%;
   width: 80%;
-  height: 100%;
-  overflow-y: scroll;
+  height: 85%;
 }
 
 .page {

@@ -32,6 +32,9 @@ application up and running.
 * local image
 * model for groups
 * table for groups
+* removed turbolinks //= require turbolinks
+* 'data-turbolinks-track': 'reload' 
+* , 'data-turbolinks-track': 'reload' 
 
 
 Things you may want to cover:

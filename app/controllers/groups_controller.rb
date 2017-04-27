@@ -28,6 +28,7 @@ class GroupsController < ApplicationController
     @messages = @group.messages
     @new_message = Message.new
     @memberships = Membership.all
+    @invite = Invite.new
   end
 
   def update

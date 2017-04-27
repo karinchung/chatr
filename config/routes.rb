@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   resources :groups do
     resources :messages
+    resources :invites
   end
-  resources :invites
+
 
 end
-#
+
 # Prefix Verb   URI Pattern                                   Controller#Action
 #   root GET    /                                             groups#index
 # logout DELETE /logout(.:format)                             sessions#destroy
@@ -36,6 +37,15 @@ end
 #        PUT    /groups/:group_id/messages/:id(.:format)      messages#update
 #        DELETE /groups/:group_id/messages/:id(.:format)      messages#destroy
 
+# group_invites GET    /groups/:group_id/invites(.:format)           invites#index
+#        POST   /groups/:group_id/invites(.:format)           invites#create
+# new_group_invite GET    /groups/:group_id/invites/new(.:format)       invites#new
+# edit_group_invite GET    /groups/:group_id/invites/:id/edit(.:format)  invites#edit
+# group_invite GET    /groups/:group_id/invites/:id(.:format)       invites#show
+#        PATCH  /groups/:group_id/invites/:id(.:format)       invites#update
+#        PUT    /groups/:group_id/invites/:id(.:format)       invites#update
+#        DELETE /groups/:group_id/invites/:id(.:format)       invites#destroy
+
 # groups GET    /groups(.:format)                             groups#index
 #        POST   /groups(.:format)                             groups#create
 # new_group GET    /groups/new(.:format)                         groups#new
@@ -44,12 +54,3 @@ end
 #        PATCH  /groups/:id(.:format)                         groups#update
 #        PUT    /groups/:id(.:format)                         groups#update
 #        DELETE /groups/:id(.:format)                         groups#destroy
-
-# invites GET    /invites(.:format)                            invites#index
-#        POST   /invites(.:format)                            invites#create
-# new_invite GET    /invites/new(.:format)                        invites#new
-# edit_invite GET    /invites/:id/edit(.:format)                   invites#edit
-# invite GET    /invites/:id(.:format)                        invites#show
-#        PATCH  /invites/:id(.:format)                        invites#update
-#        PUT    /invites/:id(.:format)                        invites#update
-#        DELETE /invites/:id(.:format)                        invites#destroy

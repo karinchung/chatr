@@ -120,7 +120,7 @@
               <div class="newGroupForm">
                 <%= ng.text_field :title, placeholder: "Group Name" %>
               </div>
-              <div class="submitButton">
+              <div class="submitMessage">
                 <%= ng.submit%>
                 <% end %>
               </div>
@@ -143,6 +143,12 @@
           </div>
           <div class="modal-body">
               <!-- Add invite form here -->
+                <%= form_for [@group, @invite] do |f| %>
+                  <%= f.text_field :recipient_id, placeholder: "Recipient" %>
+                  <%= f.text_field :message , placeholder: "Message" %>
+                  <%= f.submit 'Invite Participant' %>
+              <% end %>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

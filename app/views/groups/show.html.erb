@@ -7,19 +7,19 @@
 
     <div class="allGroupsDisplay grey col-md-2">
         <ul class="allGroupsDisplay">
-          <div class="eachParticipant">
-            <h3 class="conversations">Conversations</h3>
+          <div class="eachParticipant sticky">
+            <h2 class="conversations">Chats</h3>
             <hr>
           </div>
           <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#newGroup">
             <span class="glyphicons glyphicons-plus-sign"></span>
-            New Group
+            New Chat
           </button>
             <!-- If you belong to a group, display the name below -->
               <% @memberships.each do |mb|%>
                 <% if mb.user_id == current_user.id %>
                   <div class="individualGroup">
-                    <%= link_to mb.group.title, group_path(mb.group_id) %>
+                    <%= link_to mb.group.title, group_path(mb.group_id)%>
                   </div>
                 <% end %>
               <% end %>
@@ -41,10 +41,14 @@
                 <%= m.body %>
               </article>
                <% if  m.user == current_user %>
-                 <%= link_to'edit', edit_group_message_path(@group, m) %>
-                 <!-- edit group message path  (make buttons!)-->
-                 <%= link_to 'delete', group_message_path(@group, m), method: 'DELETE'%>
-               <% end %>
+                 <%= link_to edit_group_message_path(@group, m), class: "btn" do %>
+                    <i class="glyphicon glyphicon-pencil"></i>
+                 <% end %>
+
+               <%= link_to group_message_path(@group, m), method: :delete do %>
+                   <i class="glyphicon glyphicon-trash"></i>
+                 <% end %>
+                 <% end %>
             </div>
           <% end %>
 
@@ -93,11 +97,11 @@
 <!-- Modals -->
 
 <div class="modal fade" id="newGroup" role="dialog">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Create a new group!</h4>
+          <h4 class="modal-title">Create a new chat group!</h4>
         </div>
         <div class="modal-body">
 
@@ -119,7 +123,7 @@
   </div>
 
   <div class="modal fade" id="newParticipant" role="dialog">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>

@@ -96,5 +96,5 @@ Message.first
 * message box: rounded corners
 * consistency: CHATR
 * line shit up, 
-* default color for each user- editable
+* default color for each user- editable?
 * change font and make all font-color black

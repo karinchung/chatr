@@ -9,12 +9,16 @@
         <ul class="allGroupsDisplay">
           <div class="eachParticipant sticky">
             <h2 class="conversations">Chats</h3>
-            <hr>
           </div>
-          <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#newGroup">
-            <span class="glyphicons glyphicons-plus-sign"></span>
-            New Chat
-          </button>
+          <hr class="convo">
+          <div class="convoButton">
+            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#newGroup">
+              <span class="glyphicons glyphicons-plus-sign"></span>
+              New Chat
+            </button>
+          </div>
+
+          <hr class="convo">
             <!-- If you belong to a group, display the name below -->
               <% @memberships.each do |mb|%>
                 <% if mb.user_id == current_user.id %>
@@ -30,7 +34,6 @@
 
         <div class="message col-md-8">
           <h1 class="groupName"><%= @group.title %> </h1>
-          <hr>
           <!-- Display each message -->
           <% @messages.each do |m| %>
             <div class="eachMessage">
@@ -57,16 +60,21 @@
 
           <!-- Form to submit a message-->
             <%= form_for [@group, @new_message] do |nm| %>
-            <div class="newMessageForm">
-              <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%; height: 100%;"%>
+            <div class="submitMessage">
+
+              <div class="newMessageForm">
+                <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%; height: 100%; border-radius: 5px;"%>
+              </div>
+              <div class="submit">
+                  <br>
+                  <%= nm.submit %>
+                <% end %>
+                  <br>
+                <!-- <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%> -->
+              </div>
+
             </div>
-            <div class="submit">
-                <br>
-                <%= nm.submit %>
-              <% end %>
-                <br>
-              <!-- <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%> -->
-            </div>
+
 
         </div>
 
@@ -112,8 +120,10 @@
               <div class="newGroupForm">
                 <%= ng.text_field :title, placeholder: "Group Name" %>
               </div>
-              <%= ng.submit%>
-            <% end %>
+              <div class="submitButton">
+                <%= ng.submit%>
+                <% end %>
+              </div>
           </div>
 
         </div>

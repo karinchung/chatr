@@ -77,6 +77,8 @@ a {
    height: 50px;
    width: 50px;
    background-position: center;
+   border-radius: 5em;
+   margin-bottom: 25%;
  }
 
 /*index.html each group's page*/
@@ -87,8 +89,14 @@ article {
 }
 
 .groupName {
-  // text-align: left;
   margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  position: -webkit-sticky;  // required for Safari
+  position: sticky;
+  top: 0; // required as well.
+  background: white;
+  padding-bottom: 1%;
+  border-bottom: 1px solid #B2B2B2;
 }
 
 .eachMessage {
@@ -117,8 +125,6 @@ article {
 
 .newMessageForm {
   display: inline-block;
-  padding-left: 5%;
-  /*padding-right: 10%;*/
   margin-top: 1%;
   width: 80%;
   height: 85%;
@@ -132,11 +138,33 @@ article {
   display: inline;
   padding-left: 5%;
   margin-top: 1%;
+  text-align: left;
 }
 
-// .allGroupsDisplay {
-//   text-align: center;
-// }
+.submitMessage {
+  text-align: center;
+  padding-left: 0;
+}
+
+.conversations {
+  text-align: center;
+  // position: -webkit-sticky;
+  // position: sticky;
+  // margin-top: 1%;
+  // background: rgba(230, 230, 230, .4);
+  // padding-bottom: 1%;
+  // border-bottom: 1px solid #B2B2B2;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.convoButton {
+  text-align: center;
+}
+
+.convo {
+  margin: 1%;
+}
 
 .individualGroup {
   // background: #fbf9fa none repeat scroll 0 0; toggle background if that is current group id
@@ -152,6 +180,8 @@ article {
 
 .allGroupsDisplay {
   height: 100%;
+  padding-left: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .grey {
@@ -160,7 +190,7 @@ article {
 }
 
 .sticky {
-  top: 0; // required as well.
+  top: 0;
 }
 
 

@@ -1,2 +1,12 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit Your Profile Photo</h1>
+
+<%= form_for @user do |u| %>
+<div class="newMessageForm">
+  <%= u.file_field :profile_photo%>
+</div>
+<div class="upload">
+    <br>
+    <%= u.submit  %>
+  <% end %>
+    <br>
+</div>

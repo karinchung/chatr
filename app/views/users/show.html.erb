@@ -1,5 +1,11 @@
-<img class="profilePic" src="<%= @user.profile_image%>" alt="profile">
-<%= link_to'edit', users_path(@user)%>
+<img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
+
+  <% if @user == current_user %>
+  <br>
+    <%= link_to edit_user_path(@user), class: "btn" do %>
+       <i class="glyphicon glyphicon-pencil"></i>
+       <% end %>
+  <% end %>
 
 <h1> <%= @user.name %> </h1>
 <p> Welcome to this user's profile page 🍾 </p>

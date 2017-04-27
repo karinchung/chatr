@@ -28,6 +28,7 @@ body {
 
 .hundred {
   height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -58,8 +59,11 @@ body {
   background-position: center;
 }
 
+ .scrollable {
+   overflow-y: scroll;
+ }
 
-/*index.html Group page*/
+/*index.html each group's page*/
 
 article {
   padding: 1%;
@@ -116,13 +120,18 @@ article {
   margin-top: 1%;
 }
 
-.allGroupsDisplay {
-  padding-left: 0;
-  padding-right: 0;
-}
+// .allGroupsDisplay {
+//   text-align: center;
+// }
 
 .individualGroup {
   // background: #fbf9fa none repeat scroll 0 0; toggle background if that is current group id
   padding: 10px;
   border-bottom: 1px solid grey;
+}
+
+.participants {
+  // border-left: 1px solid black;
+  padding: 0;
+  margin: 0;
 }

@@ -9,6 +9,8 @@ Create a new group or join an existing group and start talking to your peers. Yo
 ## User Stories
 * I'd like to message my friends through an online application
 * The must be a secure login (encrypted password and authorization)
+* I'd like to make new conversations
+* I'd like to add my friends to those conversations
 
 ## Technologies
 
@@ -20,6 +22,7 @@ Ruby, Ruby on Rails, jQuery, Javascript, HTML, CSS, Postgresql
 	* active record validation
 * Message box size and max size of all messages
 	*	getting an error message when there is no messenger box on the page 
+* User can create a group with no name
 
 	reroute existing email
 	disable turbolinks- longrun only load certain dates and others upon scroll
@@ -35,6 +38,7 @@ application up and running.
 * removed turbolinks //= require turbolinks
 * 'data-turbolinks-track': 'reload' 
 * , 'data-turbolinks-track': 'reload' 
+* click on enter for a new message and it scrolls, it should just stay in placlakdsf;lakdjfal;kdf
 
 
 Things you may want to cover:
@@ -81,8 +85,16 @@ Message.first
 	# is_member?
 	# def 
 
-
-
-            <% @memberships.each do |mb|%>
-              <% if mb.user_ids.include? current %>
-            <% end %>
+    unless @group.memberships.include? current_user
+      redirect_to group_path(@group)
+    end
+    
+## UI improvements
+* icons instead of edit and delete
+* profile image or first letter of their name and make that a profile image
+* create message box is dull
+* message box: rounded corners
+* consistency: CHATR
+* line shit up, 
+* default color for each user- editable
+* change font and make all font-color black

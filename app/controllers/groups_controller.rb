@@ -13,8 +13,6 @@ class GroupsController < ApplicationController
     if @group.update_attributes(group_params)
       Membership.create(user: current_user, group: @group)
       redirect_to group_path(@group)
-    # else
-    #   redirect_to group_path(@group)
     end
   end
 
@@ -25,12 +23,12 @@ class GroupsController < ApplicationController
   end
 
   def show
-    # @groups = Group.all
     @new_group = Group.new
     @group = Group.find(params[:id])
     @messages = @group.messages
     @new_message = Message.new
     @memberships = Membership.all
+    # @new_membership = Membership.create(user: selected user, group: @group)
   end
 
   def update

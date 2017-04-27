@@ -20,6 +20,8 @@
  html, body {
    height: 95%;
    overflow: hidden;
+   font-family: 'Roboto', sans-serif;
+   font-size: 1em;
  }
 
 body {
@@ -84,7 +86,7 @@ article {
 }
 
 .messageBox {
-  background-color: tomato;
+  background-color: rgb(201, 243, 243);
   box-shadow: 0px 0px 6px #B2B2B2;
   border-radius: 10px;
   display: inline-block;
@@ -94,7 +96,8 @@ article {
 
 .message {
   // background-color: rgba(128, 128, 127, .2);
-  border-left: 1px solid black;
+  // border-left: 1px solid black;
+  // border-right: 1px solid black;
   padding-left: 5%;
   padding-right: 5%;
   overflow-y: scroll;
@@ -134,4 +137,24 @@ article {
   // border-left: 1px solid black;
   padding: 0;
   margin: 0;
+}
+
+.allGroupsDisplay {
+  height: 100%;
+}
+
+.grey {
+  background-color: #e6e6e6;
+}
+
+
+// Footer
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  // background-color: #f5f5f5;
+  text-align: center;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424233639) do
+ActiveRecord::Schema.define(version: 20170427160743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,13 @@ ActiveRecord::Schema.define(version: 20170424233639) do
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "group_id"
+    t.string   "message_photo_file_name"
+    t.string   "message_photo_content_type"
+    t.integer  "message_photo_file_size"
+    t.datetime "message_photo_updated_at"
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
@@ -44,11 +48,14 @@ ActiveRecord::Schema.define(version: 20170424233639) do
     t.string   "name"
     t.string   "email"
     t.integer  "age"
-    t.string   "profile_image"
     t.string   "password_digest"
     t.string   "user_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "profile_photo_file_name"
+    t.string   "profile_photo_content_type"
+    t.integer  "profile_photo_file_size"
+    t.datetime "profile_photo_updated_at"
   end
 
   add_foreign_key "memberships", "groups"

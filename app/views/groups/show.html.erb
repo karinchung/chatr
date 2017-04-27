@@ -35,7 +35,10 @@
           <% @messages.each do |m| %>
             <div class="eachMessage">
               <article class="messageUser">
-                <%= link_to m.user.name, user_path(m.user) %>:
+
+                <%= link_to user_path(m.user), class: "avatar" do %>
+                  <%= image_tag m.user.profile_photo.url, class: "avatar" %>
+                <% end %>
               </article>
               <article class="messageBox">
                 <%= m.body %>
@@ -77,7 +80,6 @@
                 <span class="glyphicons glyphicons-plus-sign"></span>
                 Add Participants
               </button>
-
             <div>
             </div>
             <% @group.memberships.each do |p| %>
@@ -130,9 +132,7 @@
             <h4 class="modal-title">Add Participants!</h4>
           </div>
           <div class="modal-body">
-            <!-- Add participants code here form to find user by email if there's a match,
-            then create membership-->
-
+              <!-- Add invite form here -->
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

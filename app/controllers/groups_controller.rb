@@ -28,7 +28,6 @@ class GroupsController < ApplicationController
     @messages = @group.messages
     @new_message = Message.new
     @memberships = Membership.all
-    # @new_membership = Membership.create(user: selected user, group: @group)
   end
 
   def update

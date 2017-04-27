@@ -7,13 +7,14 @@ Rails.application.routes.draw do
   resources :groups do
     resources :messages
   end
-
+  resources :invites
 
 end
-
+#
 # Prefix Verb   URI Pattern                                   Controller#Action
 #   root GET    /                                             groups#index
 # logout DELETE /logout(.:format)                             sessions#destroy
+
 #  users GET    /users(.:format)                              users#index
 #        POST   /users(.:format)                              users#create
 # new_user GET    /users/new(.:format)                          users#new
@@ -44,4 +45,11 @@ end
 #        PUT    /groups/:id(.:format)                         groups#update
 #        DELETE /groups/:id(.:format)                         groups#destroy
 
-# messages POST   /messages(.:format)                           groups#new_message
+# invites GET    /invites(.:format)                            invites#index
+#        POST   /invites(.:format)                            invites#create
+# new_invite GET    /invites/new(.:format)                        invites#new
+# edit_invite GET    /invites/:id/edit(.:format)                   invites#edit
+# invite GET    /invites/:id(.:format)                        invites#show
+#        PATCH  /invites/:id(.:format)                        invites#update
+#        PUT    /invites/:id(.:format)                        invites#update
+#        DELETE /invites/:id(.:format)                        invites#destroy

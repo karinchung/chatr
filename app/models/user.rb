@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy  # if I delete my account all my messages to go
   has_many :memberships
   has_many :groups, through: :memberships
+  has_many :invitations, :class_name => "Invite", :foreign_key => 'recipient_id'
+  has_many :sent_invites, :class_name => "Invite", :foreign_key => 'sender_id'
   has_attached_file :profile_photo,
                     styles: {medium: "300x300#", thumb: "100x100#"},
                     storage: :s3,

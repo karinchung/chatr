@@ -1,38 +1,44 @@
-<div class="container">
+<div class="profileBackground">
 
-<div class="col-md-3 sideBar">
-  <img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
 
-    <% if @user == current_user %>
-    <br>
-      <%= link_to edit_user_path(@user), class: "btn" do %>
-         <i class="glyphicon glyphicon-pencil"></i>
-         <% end %>
-          <h1>Welcome, <%= @user.name %>! </h1>
-        <% else %>
-          <h1>Welcome to <%= @user.name %>'s profile page! </h1>
-    <% end %>
+  <div class="container">
 
-</div>
+  <div class="col-md-3 sideBar">
+    <img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
 
-<div class="message col-md-9">
-  <% if @user == current_user %>
-  <!-- If you belong to a group, display the name below -->
-  <h2 class="stickIt">Continue Chatting!</h2>
-    <div>
-      <% @memberships.each do |mb|%>
-        <% if mb.user_id == current_user.id %>
-          <div class="individualGroup yourGroups">
-            <%= link_to mb.group.title, group_path(mb.group_id)%>
-          </div>
-        <% end %>
+      <% if @user == current_user %>
+      <br>
+        <%= link_to edit_user_path(@user), class: "btn" do %>
+           <i class="glyphicon glyphicon-pencil"></i>
+           <% end %>
+            <h1>Welcome, <%= @user.name %>! </h1>
+          <% else %>
+            <h1>Welcome to <%= @user.name %>'s profile page! </h1>
       <% end %>
-    </div>
 
-  <% end %>
-</div>
-  <!-- <p> Welcome to this user's profile page 🍾 </p> -->
+  </div>
 
+  <div class="message col-md-9">
+    <% if @user == current_user %>
+    <!-- If you belong to a group, display the name below -->
+    <h2 class="stickIt">Continue Chatting!</h2>
+      <div class="profileGroups">
+        <% @memberships.each do |mb|%>
+          <% if mb.user_id == current_user.id %>
+            <div class="profileDiv">
+              <%= link_to mb.group.title, group_path(mb.group_id), class: "eachProfileGroup"%>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+    <!-- <p> Welcome to this user's profile page 🍾 </p> -->
+
+
+
+  </div>
 
 
 </div>

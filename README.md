@@ -35,6 +35,10 @@ Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku
 
 ![](wires_erd.png)
 
+## Project Management
+
+[Trello for to-do/in progress/done](https://trello.com/b/8RONzxRk/wdi-project-2-rails-app)
+
 ## Remaining Updates/Fixes
 
 * Will check for duplicate emails but needs a better alert to the user to let them know why their sign up failed. Need minimum requirements for sign up.

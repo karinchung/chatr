@@ -31,8 +31,18 @@ You can click on the pencil or trash icon next to your messages. You can also ed
 
 Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku
 
+## Initial wireframe and ERD
+
+![](wires_erd.png)
+
 ## Remaining Updates/Fixes
 
 * Will check for duplicate emails but needs a better alert to the user to let them know why their sign up failed. Need minimum requirements for sign up.
 * User can create a group with no name
 * Not a real-time messaging app.
+* Add user profile to nav bar
+* Mobile friendly
+
+## Credits
+
+1. Modal code from W3 school

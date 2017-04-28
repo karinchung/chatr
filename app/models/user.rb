@@ -14,7 +14,7 @@ class User < ApplicationRecord
                     path: "/:class/:attachment/:id_partition/:style/:filename",
                     s3_region: ENV["S3_REGION"],
                     s3_credentials: Proc.new{ |a| a.instance.s3_credentials },
-                    default_url: "/assets/images/missing.png"
+                    default_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Superman-facebook.svg/2000px-Superman-facebook.svg.png"
 
     def s3_credentials
       {

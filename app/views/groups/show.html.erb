@@ -5,7 +5,7 @@
     <div class="page">
 
 
-    <div class="allGroupsDisplay grey col-md-2">
+    <div class="allGroupsDisplay sideBar col-md-2">
         <ul class="allGroupsDisplay">
           <div class="eachParticipant sticky">
             <h2 class="conversations">Chats</h3>
@@ -81,15 +81,16 @@
               <div class="newMessageForm">
                 <%= nm.text_area :body, placeholder: "Write a new message", style: "width: 100%; height: 100%; border-radius: 5px;"%>
               </div>
-              <div class="submit">
+            </div>
+              <div class="submit" >
                   <br>
-                  <%= nm.submit %>
+                  <%= nm.submit style: "margin-left:10%"%>
                 <% end %>
                   <br>
                 <!-- <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%> -->
               </div>
 
-            </div>
+
 
 
         </div>

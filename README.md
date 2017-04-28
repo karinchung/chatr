@@ -1,10 +1,24 @@
 # README
 
+![](message_page.png)
+
 ## Chatr
 
 Chatr is a messanging app that allows you to communicate with friends online through an easy to user interface. Just log in and start chatting!
 
 Create a new group and invite friends to start!
+
+**To add a new group**
+
+Just click on "New Chat" and type in a group name.
+
+**To add participants to an existing group**
+
+Click on "Add Participants" by the name they used to sign up and they automatically become a group member.
+
+**To edit or delete**
+
+You can click on the pencil or trash icon next to your messages. You can also edit your profile picture by clicking on the pencil while in the profile page.
 
 ## User Stories
 * I'd like to message people through an online application
@@ -17,10 +31,8 @@ Create a new group and invite friends to start!
 
 Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku
 
-## Remaining Bugs
+## Remaining Updates/Fixes
 
-* Doesn't check for duplicate emails
-	* active record validation
-* Message box size and max size of all messages
-	*	getting an error message when there is no messenger box on the page 
+* Will check for duplicate emails but needs a better alert to the user to let them know why their sign up failed. Need minimum requirements for sign up.
 * User can create a group with no name
+* Not a real-time messaging app.

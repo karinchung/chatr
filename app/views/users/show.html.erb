@@ -18,7 +18,7 @@
 <div class="message col-md-9">
   <% if @user == current_user %>
   <!-- If you belong to a group, display the name below -->
-  <h2 class="stickIt">Start Chatting!</h2>
+  <h2 class="stickIt">Continue Chatting!</h2>
     <div>
       <% @memberships.each do |mb|%>
         <% if mb.user_id == current_user.id %>

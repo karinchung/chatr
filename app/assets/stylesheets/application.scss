@@ -64,10 +64,42 @@ a {
 }
 
 /* Profile Page*/
+
+.profileBackground {
+   background: url("https://images.unsplash.com/photo-1420768255295-e871cbf6eb81?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=");
+   background-repeat: no-repeat;
+   size: cover;
+   height: 100%;
+   margin-top: 0;
+}
+
+.profileGroups {
+  background-color: #ff9364;
+  border-radius: 2em;
+  text-align: center;
+  overflow-y: scroll;
+
+}
+
+.profileDiv {
+  margin: 2%;
+}
+
+.eachProfileGroup {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  border-bottom: 1px solid grey;
+}
+
 .profilePic {
   height: 10em;
   width: 10em;
   background-position: center;
+  border-radius: 5em;
+  margin: 4%;
+  color: white;
 }
 
  .scrollable {

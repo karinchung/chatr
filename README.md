@@ -4,6 +4,8 @@
 
 ## Chatr
 
+[Start Chatting Here!](https://github.com/karinchung/chatr)
+
 Chatr is a messanging app that allows you to communicate with friends online through an easy to user interface. Just log in and start chatting!
 
 Create a new group and invite friends to start!
@@ -29,7 +31,13 @@ You can click on the pencil or trash icon next to your messages. You can also ed
 
 ## Technologies
 
-Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku
+Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku, Bootstrap
+
+### Gems
+
+* Bootstrap
+* Paperclip
+* Bcrypt
 
 ## Initial wireframe and ERD
 
@@ -37,7 +45,7 @@ Ruby, Rails 5, jQuery, Javascript, HTML, CSS, Postgresql, Heroku
 
 ## Project Management
 
-[Trello for to-do/in progress/done](https://trello.com/b/8RONzxRk/wdi-project-2-rails-app)
+[User Stories (prioritized)](https://trello.com/b/8RONzxRk/wdi-project-2-rails-app)
 
 ## Remaining Updates/Fixes
 

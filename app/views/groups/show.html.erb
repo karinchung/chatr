@@ -32,13 +32,29 @@
     </div>
 
 
-        <div class="message col-md-8">
-          <h1 class="groupName"><%= @group.title %> </h1>
+        <div class="message col-md-10">
+          <div class="stickIt">
+
+            <h1 class="groupName"><%= @group.title %> </h1>
+            <!-- Display participants -->
+
+              <% @group.memberships.each do |p| %>
+                <div class="displayParticipants">
+                  <%= link_to user_path(p.user), class: "displayParticipants" do %>
+                    <%= image_tag p.user.profile_photo.url, class: "individualMember" %>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <button type="button" class="btn btn-info btn-md space" data-toggle="modal" data-target="#newParticipant">
+                Add Participants
+              </button>
+          </div>
+
           <!-- Display each message -->
           <% @messages.each do |m| %>
             <div class="eachMessage">
               <article class="messageUser">
-
                 <%= link_to user_path(m.user), class: "avatar" do %>
                   <%= image_tag m.user.profile_photo.url, class: "avatar" %>
                 <% end %>
@@ -78,25 +94,6 @@
 
         </div>
 
-        <div class="participants col-md-2">
-          <ul class="allParticipants">
-            <div class="eachParticipant">
-              <h3>Participants</h3>
-              <hr>
-            </div>
-              <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#newParticipant">
-                <span class="glyphicons glyphicons-plus-sign"></span>
-                Add Participants
-              </button>
-            <div>
-            </div>
-            <% @group.memberships.each do |p| %>
-              <div class="individualGroup">
-                <%= link_to p.user.name, user_path(p.user) %>
-              </div>
-            <% end %>
-          </ul>
-        </div>
 
     </div>
 

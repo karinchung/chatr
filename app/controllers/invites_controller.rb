@@ -10,9 +10,12 @@ class InvitesController < ApplicationController
     @group = Group.find(params[:group_id])
     @invite.group = @group
     if @invite.save
-      redirect_to root_path
-    else
+      if @invite.recipient != nil
+      @invite.recipient.groups.push(@invite.group)
       redirect_to group_path(@group)
+      end
+    else
+      redirect_to root_path
     end
   end
 

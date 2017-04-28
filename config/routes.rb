@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     resources :invites
   end
 
-
 end
 
 # Prefix Verb   URI Pattern                                   Controller#Action

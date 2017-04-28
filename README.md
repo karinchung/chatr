@@ -99,3 +99,36 @@ Message.first
 * default color for each user- editable?
 * change font and make all font-color black
 
+Goals for Today:
+
+1. participants
+2. getting the root page to be the most recent user group/id page
+3. sticky nav for chats and group name
+4. move participants into group name
+5. ui of profile page needs twerk
+
+          <!-- Display participants -->
+
+            <% @group.memberships.each do |p| %>
+              <div class="displayParticipants">
+                <%= link_to user_path(p.user), class: "displayParticipants" do %>
+                  <%= image_tag p.user.profile_photo.url, class: "individualMember" %>
+                <% end %>
+              </div>
+            <% end %>
+
+            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#newParticipant">
+              <span class="glyphicons glyphicons-plus-sign"></span>
+              Add Participants
+            </button>
+            
+            
+            .individualMember {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-position: center;
+  border-radius: 5em;
+  float: left;
+  margin-left: 2%;
+}

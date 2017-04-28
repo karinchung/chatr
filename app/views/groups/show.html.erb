@@ -143,7 +143,7 @@
               <!-- Add invite form here -->
                 <%= form_for [@group, @invite] do |f| %>
                   <%= f.text_field :recipient_id, placeholder: "Recipient" %>
-                  <%= f.text_field :message , placeholder: "Message" %>
+                  <!-- <%= f.text_field :message , placeholder: "Message" %> -->
                   <%= f.submit 'Invite Participant' %>
               <% end %>
 

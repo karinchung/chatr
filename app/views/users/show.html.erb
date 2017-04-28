@@ -1,11 +1,33 @@
-<img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
+<div class="container">
 
+<div class="col-md-3">
+  <img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
+
+    <% if @user == current_user %>
+    <br>
+      <%= link_to edit_user_path(@user), class: "btn" do %>
+         <i class="glyphicon glyphicon-pencil"></i>
+         <% end %>
+    <% end %>
+
+  <h1> <%= @user.name %> </h1>
+</div>
+
+<div class="col-md-9">
   <% if @user == current_user %>
-  <br>
-    <%= link_to edit_user_path(@user), class: "btn" do %>
-       <i class="glyphicon glyphicon-pencil"></i>
-       <% end %>
-  <% end %>
+  <!-- If you belong to a group, display the name below -->
 
-<h1> <%= @user.name %> </h1>
-<p> Welcome to this user's profile page 🍾 </p>
+    <% @memberships.each do |mb|%>
+      <% if mb.user_id == current_user.id %>
+        <div class="individualGroup">
+          <%= link_to mb.group.title, group_path(mb.group_id)%>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+  <!-- <p> Welcome to this user's profile page 🍾 </p> -->
+
+
+
+</div>

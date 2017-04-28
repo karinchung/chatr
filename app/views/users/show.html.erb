@@ -10,13 +10,13 @@
          <% end %>
     <% end %>
 
-  <h1> <%= @user.name %> </h1>
+  <h1>Welcome, <%= @user.name %>! </h1>
 </div>
 
-<div class="col-md-9">
+<div class="message col-md-9">
   <% if @user == current_user %>
   <!-- If you belong to a group, display the name below -->
-
+  <h2>Start Chatting!</h2>
     <% @memberships.each do |mb|%>
       <% if mb.user_id == current_user.id %>
         <div class="individualGroup">

@@ -13,7 +13,8 @@ class User < ApplicationRecord
                     url: ":s3_domain_url",
                     path: "/:class/:attachment/:id_partition/:style/:filename",
                     s3_region: ENV["S3_REGION"],
-                    s3_credentials: Proc.new{ |a| a.instance.s3_credentials }
+                    s3_credentials: Proc.new{ |a| a.instance.s3_credentials },
+                    default_url: "/assets/images/missing.png"
 
     def s3_credentials
       {

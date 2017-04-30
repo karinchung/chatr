@@ -59,11 +59,24 @@ a {
 
 .signInBackground {
   // background-image: url("https://www.walldevil.com/wallpapers/a80/keyboard-laptop-desk-mac-macintosh.jpg");
-  background-image: url("http://data.freehdw.com/coffee-shop-laptop.jpg");
+  background-image: url("https://images.unsplash.com/photo-1485609315582-cfffa02888e8?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=");
   /* local image? */
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
   background-position: center;
   background-attachment: fixed;
+}
+
+.signIn {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: -webkit-xxx-large;
+}
+
+.form-control {
+
 }
 
 .edit {

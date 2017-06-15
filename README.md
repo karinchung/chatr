@@ -6,7 +6,7 @@
 
 [Start Chatting Here!](https://github.com/karinchung/chatr)
 
-Chatr is a messanging app that allows you to communicate with friends online through an easy to user interface. Just log in and start chatting!
+Chatr is a messaging app that allows you to communicate with friends online through an easy to user interface. Just log in and start chatting!
 
 Create a new group and invite friends to start!
 

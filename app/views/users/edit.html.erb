@@ -1,12 +1,11 @@
 <h1>Edit Your Profile Photo</h1>
 
 <%= form_for @user do |u| %>
-<div class="newMessageForm">
-  <%= u.file_field :profile_photo%>
-</div>
-<div class="upload">
-    <br>
-    <%= u.submit  %>
-  <% end %>
-    <br>
-</div>
+  <div class="newMessageForm">
+    <%= u.file_field :profile_photo%>
+  </div>
+  <br>
+  <div class="upload">
+      <%= u.submit  %>
+  </div>
+<% end %>

@@ -1,36 +1,26 @@
 <div class="profileBackground">
-
-
   <div class="container hundred">
-
     <div class="col-md-2 profilePic">
       <div>
         <img class="profilePic" src="<%= @user.profile_photo%>" alt="profile">
-
           <% if @user == current_user %>
           <br>
             <%= link_to edit_user_path(@user), class: "btn" do %>
-               <i class="glyphicon glyphicon-pencil"></i>
-               <% end %>
-                <h1 class="groupName">Welcome, <%= @user.name %>! </h1>
-              <% else %>
-                <h1 class="groupName">Welcome to <%= @user.name %>'s profile page! </h1>
-          <% end %>
-
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+              <h1 class="groupName">Welcome, <%= @user.name %>! </h1>
+            <% else %>
+              <h1 class="groupName">Welcome to <%= @user.name %>'s profile page! </h1>
+            <% end %>
       </div>
     </div>
-
-
-
   <div class="message col-md-4 col-md-offset-2 topPadding">
-
     <% if @user == current_user %>
     <!-- If you belong to a group, display the name below -->
     <!-- <h2 class="stickIt">Continue Chatting!</h2> -->
       <div class="profileGroups">
-                  <h2 class="groupName">My Groups</h2>
+          <h2 class="groupName">My Groups</h2>
         <% @memberships.each do |mb|%>
-
           <% if mb.user_id == current_user.id %>
             <div class="profileDiv">
               | <%= link_to mb.group.title, group_path(mb.group_id), class: "eachProfileGroup"%> |
@@ -38,13 +28,7 @@
           <% end %>
         <% end %>
       </div>
-
     <% end %>
   </div>
-
-
-
   </div>
-
-
 </div>

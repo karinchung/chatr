@@ -1,7 +1,5 @@
 class InvitesController < ApplicationController
-  def index
-  end
-
+  
   def create
     @invite = Invite.new({message: params[:invite][:message]})
     @invite.sender = current_user
@@ -19,20 +17,6 @@ class InvitesController < ApplicationController
     end
   end
 
-  def new
-  end
-
-  def edit
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
   private
   def invite_params

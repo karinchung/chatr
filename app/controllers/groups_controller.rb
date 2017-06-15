@@ -5,21 +5,14 @@ class GroupsController < ApplicationController
   def index
     @group = Group.all
     @new_group = Group.new
-
   end
 
   def create
     @group = Group.new(group_params)
     if @group.update_attributes(group_params)
-      Membership.create(user: current_user, group: @group)
+      Membership.create(user: current_user, group: @group) #make current user the first member of this group
       redirect_to group_path(@group)
     end
-  end
-
-  def new
-  end
-
-  def edit
   end
 
   def show
@@ -31,12 +24,7 @@ class GroupsController < ApplicationController
     @invite = Invite.new
   end
 
-  def update
-  end
-
-  def destroy
-  end
-
+  # this is used in the group page /group_path
   def delete_message
     @group = Group.find(params[:id])
     @messages = @group.messages(params[:id])

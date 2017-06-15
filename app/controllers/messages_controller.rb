@@ -11,25 +11,18 @@ class MessagesController < ApplicationController
     redirect_to group_path(@group)
   end
 
-  def new
-  end
-
   def edit
     @message = Message.find(params[:id])
     @group = @message.group
-  end
-
-  def show
   end
 
   def update
     @message = Message.find(params[:id])
     @group = Group.find(params[:group_id])
     if @message.update_attributes(message_params)
-      redirect_to group_path(@group)
-    else
-      redirect_to group_path(@group)
+      # todo: flash message updated
     end
+    redirect_to group_path(@group)
   end
 
   def destroy

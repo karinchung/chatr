@@ -1,10 +1,6 @@
 <div class="hundred container">
-
   <div class="hundred row">
-
     <div class="page">
-
-
     <div class="allGroupsDisplay sideBar col-md-2">
         <ul class="allGroupsDisplay">
           <div class="eachParticipant sticky">
@@ -17,7 +13,6 @@
               New Chat
             </button>
           </div>
-
           <hr class="convo">
             <!-- If you belong to a group, display the name below -->
               <% @memberships.each do |mb|%>
@@ -28,16 +23,11 @@
                 <% end %>
               <% end %>
           </ul>
-
     </div>
-
-
         <div class="message col-md-10">
           <div class="stickIt">
-
             <h1 class="groupName"><%= @group.title %> </h1>
             <!-- Display participants -->
-
               <% @group.memberships.each do |p| %>
                 <div class="displayParticipants">
                   <%= link_to user_path(p.user), class: "displayParticipants" do %>
@@ -45,7 +35,6 @@
                   <% end %>
                 </div>
               <% end %>
-
               <button type="button" class="btn btn-info btn-md space" data-toggle="modal" data-target="#newParticipant">
                 Add Participants
               </button>
@@ -89,17 +78,9 @@
                   <br>
                 <!-- <%= link_to('Back to All Groups', groups_path, style: "margin: 1%;")%> -->
               </div>
-
-
-
-
         </div>
-
-
     </div>
-
   </div>
-
 </div>
 
 <!-- Modals -->
